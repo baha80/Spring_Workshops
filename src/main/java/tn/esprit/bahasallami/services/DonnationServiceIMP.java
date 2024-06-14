@@ -7,6 +7,7 @@ import tn.esprit.bahasallami.repository.Donationrepository;
 import java.time.LocalDate;
 import java.util.Comparator;
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -22,11 +23,8 @@ public class DonnationServiceIMP implements IDonnation{
     }
 //stream() is a method of the Collection interface. It returns a sequential stream considering collection as its source.
     @Override
-    public Set<Donation> getDonationByType(DonationType type) {
-        return donnationRepository.findAll().stream()
-                .filter(d -> d.getDonType().equals(type))
-                .collect(Collectors.toSet());
-
+    public List<Donation> getDonationByType(DonationType type) {
+        return  donnationRepository.findByDonType(type);
 
     }
 

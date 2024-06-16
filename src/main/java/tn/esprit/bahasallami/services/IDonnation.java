@@ -17,4 +17,5 @@ import java.util.Set;
     public List<Donation> getDonationByType(DonationType type) ;
 
     public Float getTotalDonation(Date date1, Date date2);
+
 }

@@ -1,5 +1,6 @@
 package tn.esprit.bahasallami.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,6 +25,7 @@ public class Employe implements Serializable {
     private String firstName;
     private String position;
     @ManyToOne
+    @JsonIgnore
     private Campany company;
 
     //relation avec Donation employee 1..*

@@ -1,6 +1,5 @@
 package tn.esprit.bahasallami.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,6 +22,9 @@ public class Donation implements Serializable {
     private String donDate;
     @Enumerated(EnumType.STRING)
     private DonationType donType;
+
+
+
     @ManyToOne
     private Employe employe;
     @ManyToOne

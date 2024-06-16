@@ -24,12 +24,21 @@ public class EmployeServiceIMP implements IEmploye{
     private CampanyRepository icampanyRepository;
     private EmployeRepository iemployeRepository;
     private IRedCrescentRepository iRedCrescentRepository;
-    @Override
-    public Employe addEmployeAndAssignToCompany(Employe employe, String campanyName) {
-        Campany campany = icampanyRepository.findAll().stream().filter(c -> c.getCampanyName().equals(campanyName)).findFirst().get();
-        employe.setCompany(campany);
-        return iemployeRepository.save(employe);
-
+//    @Override
+//    public Employe addEmployeAndAssignToCompany(Employe employe, String campanyName) {
+//        Campany campany = icampanyRepository.findAll().stream().filter(c -> c.getCampanyName().equals(campanyName)).findFirst().get();
+//        employe.setCompany(campany);
+//        return iemployeRepository.save(employe);
+//
+//    }
+     @Override
+        public Employe addEmployeAndAssignToCompany(Employe employe, String campanyName) {
+        Campany campany = icampanyRepository.findAll().stream()
+        .filter(c -> c.getCampanyName().equals(campanyName))
+        .findFirst()
+        .orElseThrow(() -> new IllegalArgumentException("No company found with name: " + campanyName));
+    employe.setCompany(campany);
+    return iemployeRepository.save(employe);
     }
 
 //Question 6 : Create a method that returns the employee who made the most donations in a given month.

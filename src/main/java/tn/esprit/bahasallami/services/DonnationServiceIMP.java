@@ -1,5 +1,7 @@
 package tn.esprit.bahasallami.services;
 
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 import tn.esprit.bahasallami.entities.Donation;
 import tn.esprit.bahasallami.entities.DonationType;
 import tn.esprit.bahasallami.repository.Donationrepository;
@@ -10,7 +12,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
-
+@Service
+@AllArgsConstructor
 public class DonnationServiceIMP implements IDonnation{
 
     private Donationrepository donnationRepository;

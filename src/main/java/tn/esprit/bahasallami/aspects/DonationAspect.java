@@ -12,4 +12,5 @@ public class DonationAspect {
     public void thankYouForDonation() {
         System.out.println("Merci pour ce don");
     }
+
 }

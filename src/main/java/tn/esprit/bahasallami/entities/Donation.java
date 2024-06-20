@@ -27,8 +27,8 @@ public class Donation implements Serializable {
 
     @ManyToOne
     private Employe employe;
-    @ManyToOne
-    private RedCrescent redCrescent;
+//    @ManyToOne
+//    private RedCrescent redCrescent;
 
 
 

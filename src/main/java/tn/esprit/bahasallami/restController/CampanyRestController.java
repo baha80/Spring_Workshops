@@ -9,9 +9,7 @@ import tn.esprit.bahasallami.services.ICampany;
 @AllArgsConstructor
 @RestController
 public class CampanyRestController {
-
     private ICampany icampanyService;
-
     @PostMapping("/addCampany")
     public Campany addCampany(@RequestBody Campany campany){
         return icampanyService.addCampany(campany);

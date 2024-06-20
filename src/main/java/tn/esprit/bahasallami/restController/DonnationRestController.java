@@ -12,7 +12,6 @@ import java.util.List;
 @RestController
 public class DonnationRestController {
 
-
     private IDonnation iDonnationService;
 
     //add donation
@@ -21,15 +20,11 @@ public class DonnationRestController {
         return iDonnationService.addDonation(donation);
     }
 
-
-
-
     //get aboonement by type
     @GetMapping("/getDonnationByType/{type}")
     public List<Donation> findByDonType(@PathVariable DonationType type){
         return iDonnationService.getDonationByType(type);
     }
-
     //get total donation
     @GetMapping("/getTotalDonnation/{date1}/{date2}")
     public Float getTotalDonnation(@PathVariable Date date1, @PathVariable Date date2){

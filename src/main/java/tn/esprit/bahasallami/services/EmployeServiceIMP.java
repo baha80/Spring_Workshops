@@ -63,11 +63,10 @@ public class EmployeServiceIMP implements IEmploye{
     public List<Employe> getEmployeByArea(String companyName, String area) {
         List<RedCrescent> redCrescentsInArea = iRedCrescentRepository.findAll().stream()
                 .filter(rc -> rc.getArea().equals(area))
-                .collect(Collectors.toList());
+                .toList();// get all red crescents in the area
 
         return iemployeRepository.findAll().stream()
                 .filter(e -> e.getCompany().getCampanyName().equals(companyName))
-
-                .collect(Collectors.toList());
+                .toList();
     }
 }

@@ -21,7 +21,10 @@ public class DonnationServiceIMP implements IDonnation{
     public Donation addDonation(Donation donation) {
         if (!"MONETARY".equals(donation.getDonType())) {
             donation.setDonAmount(0);
-        }
+   }
+//        else {
+//            donation.setDonAmount(donation.getDonAmount());
+//        }
         return donnationRepository.save(donation);
     }
 //stream() is a method of the Collection interface. It returns a sequential stream considering collection as its source.

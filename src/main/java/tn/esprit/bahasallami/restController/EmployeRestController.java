@@ -13,15 +13,10 @@ import java.util.List;
 public class EmployeRestController {
     private IEmploye iemployeService;
 
-
-
     @PostMapping("/addEmploye")
     public Employe addEmployeAndAssignToCompany(@RequestBody Employe employe, @RequestParam String campanyName) {
         return iemployeService.addEmployeAndAssignToCompany(employe, campanyName);
     }
-
-
-
 
     @GetMapping("/best-donator")
     public void getEmployeByDonation() {
